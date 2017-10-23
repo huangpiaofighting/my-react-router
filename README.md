@@ -6,4 +6,4 @@
 
 > 如果想要快速删除node_modules文件夹,使用安装 npm install rimraf -g,用rimraf node_modules 删除。
 
-> ss
+> ssddd
