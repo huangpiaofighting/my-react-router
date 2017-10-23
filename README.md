@@ -6,4 +6,9 @@
 
 > 如果想要快速删除node_modules文件夹,使用安装 npm install rimraf -g,用rimraf node_modules 删除。
 
-> ssddd
+> git 每次都要提交用户名和密码,添加 git文件夹中的config文件
+```
+[credential]
+     helper = store
+```
+> 
