@@ -1,11 +1,16 @@
 import React from 'react';
 import TReactLoading from './test/TReactLoading.js';
+import {TestA,TestB} from './test/TRouteMatch.js';
 import TRouteMatch from './test/TRouteMatch.js';
+import TImmutable from './test/TImmutable.js';
+import TES6 from './test/TES6.js';
+import Error from './error.js';
 import {
-  BrowserRouter as Router,
+  HashRouter,
   Route,
   Link,
   Redirect,
+  Prompt,
   withRouter
 } from 'react-router-dom';
 
@@ -16,7 +21,7 @@ import {
 // 4. Click the back button, note the URL each time
 
 const AuthExample = () => (
-  <Router>
+  <HashRouter>
     <div>
       <AuthButton/>
       <ul>
@@ -24,14 +29,21 @@ const AuthExample = () => (
         <li><Link to="/protected">Protected Page</Link></li>
         <li><Link to="/TReactLoading">My TReactLoading</Link></li>
         <li><Link to="/TRouteMatch">My TRouteMatch</Link></li>
+        <li><Link to="/TImmutable">My TImmutable</Link></li>
+        <li><Link to="/TES6">My TES6</Link></li>
       </ul>
+      <Prompt when={false} message="您确定要离开当前页面吗？"/>
       <Route path="/public" component={Public}/>
       <Route path="/login" component={Login}/>
       <Route path="/TReactLoading" component={TReactLoading}/>
       <Route path="/TRouteMatch" component={TRouteMatch}/>
+      <Route path="/TImmutable" component={TImmutable}/>
+      <Route path="/TES6" component={TES6}/>
       <PrivateRoute path="/protected" component={Protected}/>
+      <Route path={`/TRouteMatch/Bb`} component={TestB} />
+      <Route path={`/error`} component={Error} />
     </div>
-  </Router>
+  </HashRouter>
 )
 
 const fakeAuth = {
